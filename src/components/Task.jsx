@@ -14,7 +14,7 @@ export const Task = ({ body, date, time, isCompleted, priority, id, onDeleteTask
 
     return (
         <>
-            <div className={"task-card"}>
+            <div className={`task-card ${isCompleted ? 'completed' : priority}`}>
                 <div className="card-header">
                     <div className="header-text">
                         <ImCheckboxChecked 

@@ -8,6 +8,8 @@
     --secondary-blue: #028ff4;
     --light-grey: #b1b1b1;
     --green: #0fbb79;
+    --orange: #ff843d;
+    --red: #fa4343;
 }
 
 * {
@@ -86,6 +88,24 @@ header {
     background: linear-gradient(var(--dark-blue), var(--dark-blue));
     border-radius: 10px;
     padding: 1rem;
+    border-left: 1rem solid var(--dark-blue);
+    transition: 0.8s ease all;
+}
+
+.task-grid .task-card.low {
+    border-color: var(--main-blue);
+}
+
+.task-grid .task-card.high {
+    border-color: var(--orange);
+}
+
+.task-grid .task-card.urgent {
+    border-color: var(--red);
+}
+
+.task-grid .task-card.completed {
+    border-color: var(--green);
 }
 
 .task-grid .task-card>* {
@@ -129,6 +149,19 @@ header {
     justify-content: space-between;
     align-items: flex-end;
 }
+
+.task-grid .task-card .card-footer .priority.low{
+    color: var(--main-blue);
+}
+
+.task-grid .task-card .card-footer .priority.high{
+    color: var(--orange);
+}
+
+.task-grid .task-card .card-footer .priority.urgent{
+    color: var(--red);
+}
+
 
 
 .task-grid .task-card .card-controls {

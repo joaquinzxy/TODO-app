@@ -4,7 +4,6 @@ export const AddNewTask = ({ onSetTask, newId }) => {
 
     const [bodyInput, setBodyInput] = useState('');
     const [priority, setPriority] = useState('low');
-    const [status, setStatus] = useState('Not started');
 
     const onBodyChange = event => {
         setBodyInput(event.target.value)
@@ -29,6 +28,7 @@ export const AddNewTask = ({ onSetTask, newId }) => {
             isCompleted: false
         })
         setBodyInput('')
+        setPriority('Low')
     }
 
     return (
@@ -42,7 +42,7 @@ export const AddNewTask = ({ onSetTask, newId }) => {
                         value={bodyInput}
                         maxLength='40'
                     />
-                    <select name="priority" id="priority" onChange={onPriorityChange}>
+                    <select name="priority" id="priority" onChange={onPriorityChange} value={priority}>
                         <option value="low">Low</option>
                         <option value="mid">Mid</option>
                         <option value="high">High</option>
