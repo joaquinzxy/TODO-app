@@ -1,5 +1,6 @@
-import { FaTrashAlt, FaAngleLeft, FaAngleRight } from 'react-icons/fa'
+import { FaTrashAlt } from 'react-icons/fa'
 import { ImCheckboxChecked } from 'react-icons/im'
+import './Task.css'
 
 export const Task = ({ body, date, time, isCompleted, priority, id, onDeleteTask, onCompletedTask }) => {
 
@@ -17,10 +18,12 @@ export const Task = ({ body, date, time, isCompleted, priority, id, onDeleteTask
             <div className={`task-card ${isCompleted ? 'completed' : priority}`}>
                 <div className="card-header">
                     <div className="header-text">
-                        <ImCheckboxChecked 
-                            className={`complete-task ${isCompleted && 'completed'}`}
-                            onClick={()=>onCompletedTask(id)}
-                        />
+                        <div className="icon">
+                            <ImCheckboxChecked
+                                className={`complete-task ${isCompleted && 'completed'}`}
+                                onClick={() => onCompletedTask(id)}
+                            />
+                        </div>
                         <h2>{body}</h2>
                     </div>
                     <div className="date-time">
@@ -31,7 +34,7 @@ export const Task = ({ body, date, time, isCompleted, priority, id, onDeleteTask
                 <div className="card-footer">
                     <p className={`priority ${priority}`}>{priority.toUpperCase()}</p>
                     <div className="card-controls">
-                        <button data-id={id} onClick={handleDeleteTask}><FaTrashAlt/></button>
+                        <button data-id={id} onClick={handleDeleteTask}><FaTrashAlt /></button>
                     </div>
                 </div>
             </div>

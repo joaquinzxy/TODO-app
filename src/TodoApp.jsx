@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { AddNewTask } from "./components/AddNewTask"
+import { AddNewTask } from "./components/AddNewTask/AddNewTask"
 import { Header } from "./components/Header"
-import { TaskGrid } from "./components/TaskGrid"
+import { TaskGrid } from "./components/TaskGrid/TaskGrid"
 import { useManageTasks } from "./hooks/useManageTasks"
 
 import './style.css'
